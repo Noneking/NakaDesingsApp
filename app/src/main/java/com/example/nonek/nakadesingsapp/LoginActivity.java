@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
     private TextInputLayout emailWrapper, passwordWrapper;
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private Button buttonLogin;
 
     private Pattern pattern;
     private Matcher matcher;
@@ -60,12 +61,14 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
         editTextEmail= (EditText) findViewById(R.id.login_editText_email);
         editTextPassword= (EditText) findViewById(R.id.login_editText_password);
 
+        buttonLogin= (Button) findViewById(R.id.login_button_login);
+
         initListeners();
     }
 
     public void initListeners(){
 
-
+        buttonLogin.setOnClickListener(this);
 
         initOperations();
     }
