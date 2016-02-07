@@ -41,7 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:hint="@string/login_editText_email"/>
+                android:hint="@string/login_editText_email"
+                android:text="aanoriega.mobile@gmail.com"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -57,7 +58,8 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:hint="@string/login_editText_password"
-                android:ems="10" />
+                android:ems="10"
+                android:text="1234"/>
 
         </android.support.design.widget.TextInputLayout>
 
