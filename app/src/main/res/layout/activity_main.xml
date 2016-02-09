@@ -9,6 +9,15 @@
     tools:context=".MainActivity">
 
     <!-- Contenido Principal -->
+    <!--<FrameLayout-->
+        <!--android:id="@+id/main_fragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+
+
+    <!--</FrameLayout>-->
+
     <include layout="@layout/main_content" />
 
     <!-- Menú Deslizante -->

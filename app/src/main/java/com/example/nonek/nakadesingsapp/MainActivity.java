@@ -1,11 +1,9 @@
 package com.example.nonek.nakadesingsapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -13,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -90,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState == null) {
             // Seleccionar item
         }
-
     }
 
     private void setToolbar() {
@@ -112,16 +108,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void selectedItemInitOperations(String title){
-        Bundle args = new Bundle();
-        args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
 
-        Fragment fragment = PlaceholderFragment.newInstance(title);
-        fragment.setArguments(args);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager
-                .beginTransaction()
-                .replace(R.id.main_content, fragment)
-                .commit();
+        Fragment fragment=null;
+
+        switch(title){
+            case "Category":
+
+                break;
+            case "Product":
+//                fragment = ProductActivity.newInstance(title);
+
+//                Intent intent=new Intent(getApplicationContext(), ProductActivity.class);
+//                fragment=startActivityFromFragment(R.id.main_content, intent, RESULT_OK);
+                break;
+            case "Employee":
+
+                break;
+            case "Basket":
+
+                break;
+            case "Log out":
+
+                break;
+        }
+
+//        if(fragment!=null){
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            fragmentManager
+//                    .beginTransaction()
+//                    .replace(R.id.main_content, fragment)
+//                    .commit();
+            android.support.v4.app.FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.product_mainLayout, Fragment.instantiate(getApplicationContext(), ProductActivity.class.getName()));
+            fragmentTransaction.commit();
+//        }
 
         drawerLayout.closeDrawers();
         setTitle(title);
