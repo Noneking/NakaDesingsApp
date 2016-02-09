@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
                     emailWrapper.setErrorEnabled(false);
                     passwordWrapper.setErrorEnabled(false);
 
-                    intent=new Intent(this, MainActivity.class);
+                    intent=new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
                 break;

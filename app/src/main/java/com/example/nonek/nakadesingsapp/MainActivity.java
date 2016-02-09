@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -15,7 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //Components
     private DrawerLayout drawerLayout;
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void initListeners(Bundle savedInstanceState){
 
-
+        navigationView.setNavigationItemSelectedListener(this);
 
         initOperations(savedInstanceState);
     }
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             // Añadir carácteristicas
         }
 
-        drawerTitle = getResources().getString(R.string.home_item);
+        drawerTitle = getResources().getString(R.string.category_item);
         if (savedInstanceState == null) {
             // Seleccionar item
         }
@@ -100,6 +102,29 @@ public class MainActivity extends AppCompatActivity {
             ab.setHomeAsUpIndicator(R.drawable.ic_menu);
             ab.setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        item.setChecked(true);
+        selectedItemInitOperations(item.getTitle().toString());
+        return false;
+    }
+
+    public void selectedItemInitOperations(String title){
+        Bundle args = new Bundle();
+        args.putString(PlaceholderFragment.ARG_SECTION_TITLE, title);
+
+        Fragment fragment = PlaceholderFragment.newInstance(title);
+        fragment.setArguments(args);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager
+                .beginTransaction()
+                .replace(R.id.main_content, fragment)
+                .commit();
+
+        drawerLayout.closeDrawers();
+        setTitle(title);
     }
 
 }

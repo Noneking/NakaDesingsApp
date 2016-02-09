@@ -3,26 +3,22 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_category"
             android:checked="true"
             android:icon="@drawable/category_128x128"
-            android:title="@string/home_item" />
+            android:title="@string/category_item" />
         <item
-            android:id="@+id/nav_productos"
-            android:icon="@drawable/product_128x128"
-            android:title="@string/productos_item" />
+            android:id="@+id/nav_product"
+            android:icon="@drawable/product1_128x128"
+            android:title="@string/product_item" />
         <item
-            android:id="@+id/nav_carrito"
-            android:icon="@drawable/shopping_cart_128x128"
-            android:title="@string/compras_item" />
-        <item
-            android:id="@+id/nav_ordenes"
+            android:id="@+id/nav_employee"
             android:icon="@drawable/employee1_128x128"
-            android:title="@string/ordenes_item" />
+            android:title="@string/employee_item" />
         <item
-            android:id="@+id/nav_facturas"
-            android:icon="@drawable/user2_128x128"
-            android:title="@string/facturas_item" />
+            android:id="@+id/nav_basket"
+            android:icon="@drawable/shopping_cart1_128x128"
+            android:title="@string/basket_item" />
 
         <!-- Sección de configuración -->
         <item

@@ -12,6 +12,7 @@ public class PlaceholderFragment extends Fragment {
     public static final String ARG_SECTION_TITLE = "section_number";
 
     public static PlaceholderFragment newInstance(String sectionTitle) {
+
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle args = new Bundle();
         args.putString(ARG_SECTION_TITLE, sectionTitle);
@@ -23,14 +24,13 @@ public class PlaceholderFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.section_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
-        // Ubicar argumento en el text view de section_fragment.xml
+        View view = inflater.inflate(R.layout.activity_product, container, false);
+
         String title = getArguments().getString(ARG_SECTION_TITLE);
         TextView titulo = (TextView) view.findViewById(R.id.title);
-        titulo.setText(title);
+//        titulo.setText(title);
         return view;
     }
 

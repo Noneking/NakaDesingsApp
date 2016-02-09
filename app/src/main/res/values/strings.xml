@@ -22,12 +22,12 @@
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    <string name="home_item">Home</string>
-    <string name="productos_item">Productos</string>
-    <string name="compras_item">Carrito</string>
-    <string name="ordenes_item">Ordenes</string>
-    <string name="facturas_item">Facturas</string>
-    <string name="log_out_item">Cerrar Sesión</string>
-    <string name="configuracion_item">Configuración</string>
+    <string name="category_item">Category</string>
+    <string name="product_item">Product</string>
+    <string name="employee_item">Employee</string>
+    <string name="basket_item">Basket</string>
+    <string name="log_out_item">Log out</string>
+    <string name="configuracion_item">Configuration</string>
+    <string name="title_activity_product">ProductActivity</string>
 
 </resources>

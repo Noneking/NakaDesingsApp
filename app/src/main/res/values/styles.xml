@@ -1,7 +1,8 @@
 <resources>
 
-    <style name="Theme.LoginActivity" parent="AppTheme"/>
-    <style name="Theme.MainActivity" parent="MainActivity"/>
+    <style name="Theme.LoginActivity" parent="AppTheme" />
+
+    <style name="Theme.MainActivity" parent="MainActivity" />
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
@@ -33,5 +34,9 @@
         <item name="colorAccent">@color/accent_material_light</item>
 
     </style>
+
+    <style name="Theme.LoginActivity.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.LoginActivity.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

@@ -21,6 +21,10 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
+            android:theme="@style/Theme.MainActivity" />
+        <activity
+            android:name=".ProductActivity"
+            android:label="@string/title_activity_product"
             android:theme="@style/Theme.MainActivity"></activity>
     </application>
 
