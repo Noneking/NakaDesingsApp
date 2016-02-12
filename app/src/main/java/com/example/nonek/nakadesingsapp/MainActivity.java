@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.main_content, productFragment).commit();
 
-                productActivity=new ProductActivity(productFragment.getCurrentView());
+//                productActivity=new ProductActivity(productFragment.getCurrentView());
 
                 break;
             case "Employee":
