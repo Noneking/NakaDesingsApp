@@ -16,7 +16,7 @@
         <!--Activity Colors-->
         <item name="colorPrimary">@color/window_background</item>
         <item name="colorPrimaryDark">@color/primary_dark_material_light</item>
-        <item name="colorAccent">@color/accent_material_light</item>
+        <item name="colorAccent">@color/blue_naka</item>
 
     </style>
 
@@ -29,7 +29,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
 
         <!--Activity Colors-->
-        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimary">@color/blue_naka</item>
         <item name="colorPrimaryDark">@color/primary_dark_material_light</item>
         <item name="colorAccent">@color/white</item>
 
@@ -41,7 +41,7 @@
 
     <style name="Tabs">
         <item name="android:textColor">@color/white</item>
-        <item name="android:background">@color/primaryColor</item>
+        <item name="android:background">@color/blue_naka</item>
         <item name="android:backgroundStacked">@color/colorAccent</item>
     </style>
 

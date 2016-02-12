@@ -73,8 +73,6 @@ public class ProductActivity extends Fragment implements TabHost.OnTabChangeList
 
     private void initOperations() {
 
-//        gestureDetector = new GestureDetector(this, new GestureListener());
-
         res=getResources();
         tabhost.setup();
 
