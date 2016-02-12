@@ -3,6 +3,7 @@ package com.example.nonek.nakadesingsapp;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.gesture.Gesture;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 public class ProductActivity extends Activity implements TabHost.OnTabChangeListener {
 
@@ -80,8 +82,6 @@ public class ProductActivity extends Activity implements TabHost.OnTabChangeList
 
     private void initComponents() {
 
-        Log.i("tab","PASA POR INITCOMPONENTS");
-
         tabhost= (TabHost) this.findViewById(R.id.product_tabHost);
         tab_product_view= (LinearLayout) this.findViewById(R.id.product_view_linearLayout);
         tab_product_insert= (LinearLayout) this.findViewById(R.id.product_insert_linearLayout);
@@ -96,8 +96,6 @@ public class ProductActivity extends Activity implements TabHost.OnTabChangeList
     }
 
     private void initOperations() {
-
-//        gestureDetector = new GestureDetector(this, new GestureListener());
 
         res=getResources();
         tabhost.setup();
@@ -196,7 +194,9 @@ public class ProductActivity extends Activity implements TabHost.OnTabChangeList
 
     public void animationRight(){
 //        Toast.makeText(this,"animationRight",Toast.LENGTH_SHORT).show();
-        if(tabhost.getCurrentTab()>1){
+        Log.i("tab","Pasa por right");
+        if(tabhost.getCurrentTab()>0){
+            Log.i("tab","Entra dentro del primer if");
             tabhost.setCurrentTab(0);
         }else{
             tabhost.setCurrentTab(tabhost.getCurrentTab()+1);

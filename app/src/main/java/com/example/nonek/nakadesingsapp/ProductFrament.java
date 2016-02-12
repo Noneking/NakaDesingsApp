@@ -1,10 +1,12 @@
 package com.example.nonek.nakadesingsapp;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Display;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 import static android.view.GestureDetector.*;
 
@@ -86,6 +89,12 @@ public class ProductFrament extends Fragment implements TabHost.OnTabChangeListe
         spec.setContent(R.id.product_insert_linearLayout);
         spec.setIndicator("Insert", res.getDrawable(R.drawable.add1_128x128));
         tabhost.addTab(spec);
+
+        for(int i=0;i<tabhost.getTabWidget().getChildCount();i++)
+        {
+            TextView widgetTextView = (TextView) tabhost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+            widgetTextView.setTextColor(Color.parseColor("#FFFFFF"));
+        }
 
         tabhost.setCurrentTab(0);
         currentTab=0;

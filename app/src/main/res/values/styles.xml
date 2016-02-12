@@ -31,12 +31,18 @@
         <!--Activity Colors-->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primary_dark_material_light</item>
-        <item name="colorAccent">@color/accent_material_light</item>
+        <item name="colorAccent">@color/white</item>
 
     </style>
 
     <style name="Theme.LoginActivity.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.LoginActivity.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Tabs">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:backgroundStacked">@color/colorAccent</item>
+    </style>
 
 </resources>
