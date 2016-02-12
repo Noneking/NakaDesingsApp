@@ -16,7 +16,12 @@
     <RelativeLayout
         android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/naka_designs_sevilla_logo" />
 
     </RelativeLayout>
 
