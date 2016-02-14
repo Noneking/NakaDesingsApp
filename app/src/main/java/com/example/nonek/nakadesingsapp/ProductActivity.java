@@ -114,6 +114,11 @@ public class ProductActivity extends Fragment implements TabHost.OnTabChangeList
         }
     }
 
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
+
     final GestureDetector gestureDetector=new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener(){
 
         private static final int SWIPE_THRESHOLD = 100;
@@ -169,10 +174,5 @@ public class ProductActivity extends Fragment implements TabHost.OnTabChangeList
             return result;
         }
     });
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
-    }
 
 }

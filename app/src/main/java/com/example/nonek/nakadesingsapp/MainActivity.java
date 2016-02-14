@@ -1,5 +1,7 @@
 package com.example.nonek.nakadesingsapp;
 
+import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -15,13 +17,15 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CategoryActivity.OnFragmentInteractionListener, EmployeeFragment.OnFragmentInteractionListener {
 
     //Components
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
     ProductActivity productActivity;
+    CategoryActivity categoryFragment;
+    EmployeeFragment employeeFragment;
 
     //Variables
     private String drawerTitle;
@@ -82,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void initOperations(Bundle savedInstanceState){
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         drawerTitle = getResources().getString(R.string.app_title);
 
         if (navigationView != null) {
@@ -114,22 +120,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void selectedItemInitOperations(String title){
 
         Fragment fragment=null;
+        FragmentManager fragmentManager=null;
+        FragmentTransaction fragmentTransaction=null;
 
         switch(title){
             case "Category":
 
+                categoryFragment=new CategoryActivity();
+
+                fragmentManager=getSupportFragmentManager();
+                fragmentTransaction=fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_content, categoryFragment).commit();
                 break;
             case "Product":
 
                 productActivity=new ProductActivity();
 
-                FragmentManager fragmentManager=getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+                fragmentManager=getSupportFragmentManager();
+                fragmentTransaction=fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.main_content, productActivity).commit();
-
                 break;
             case "Employee":
 
+                employeeFragment=new EmployeeFragment();
+
+                fragmentManager=getSupportFragmentManager();
+                fragmentTransaction=fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_content, employeeFragment).commit();
                 break;
             case "Basket":
 
@@ -143,4 +160,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setTitle(title);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
