@@ -6,12 +6,12 @@
     tools:context="com.example.nonek.nakadesingsapp.EmployeeFragment">
 
     <RelativeLayout
-        android:id="@+id/employee_content"
+        android:id="@+id/basket_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
         <TabHost
-            android:id="@+id/employee_tabHost"
+            android:id="@+id/basket_tabHost"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
@@ -35,7 +35,7 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/employee_itemView_linearLayout"
+                        android:id="@+id/basket_itemView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -43,12 +43,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="ITEM_VIEW_EMPLOYEE"/>
+                            android:text="ITEM_VIEW_BASKET"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/employee_listView_linearLayout"
+                        android:id="@+id/basket_listView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -56,12 +56,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="LISTVIEW_EMPLOYEE"/>
+                            android:text="LISTVIEW_BASKET"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/employee_insertView_linearLayout"
+                        android:id="@+id/basket_insertView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -69,7 +69,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="INSERT_VIEW_EMPLOYEE"/>
+                            android:text="INSERT_VIEW_BASKET"/>
 
                     </LinearLayout>
                 </FrameLayout>

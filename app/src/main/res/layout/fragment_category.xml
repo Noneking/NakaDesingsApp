@@ -36,7 +36,7 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/category_view_linearLayout"
+                        android:id="@+id/category_itemView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -44,12 +44,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="VIEW_CATEGORY"/>
+                            android:text="ITEM_VIEW_CATEGORY"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/category_insert_linearLayout"
+                        android:id="@+id/category_listView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -57,7 +57,20 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="INSERT_CATEGORY"/>
+                            android:text="LISTVIEW_CATEGORY"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/category_insertView_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="INSERT_VIEW_CATEGORY"/>
 
                     </LinearLayout>
                 </FrameLayout>

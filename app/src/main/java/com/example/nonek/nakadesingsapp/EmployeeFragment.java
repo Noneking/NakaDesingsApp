@@ -6,8 +6,10 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -44,14 +46,17 @@ public class EmployeeFragment extends Fragment implements TabHost.OnTabChangeLis
 
     private View view;
 
+    private DrawerLayout drawerLayout;
+
     private TabHost tabhost;
     private TabHost.TabSpec spec;
-    private LinearLayout tab_category_view, tab_category_insert;
+    private LinearLayout tab_employee_itemView, tab_employee_listView, tab_employee_insertView;
 
     private int currentTab;
 
-    public EmployeeFragment() {
+    public EmployeeFragment(DrawerLayout drawerLayout) {
         // Required empty public constructor
+        this.drawerLayout=drawerLayout;
     }
 
     /**
@@ -65,7 +70,7 @@ public class EmployeeFragment extends Fragment implements TabHost.OnTabChangeLis
 
     // TODO: Rename and change types and number of parameters
     public static EmployeeFragment newInstance(String param1, String param2) {
-        EmployeeFragment fragment = new EmployeeFragment();
+        EmployeeFragment fragment = new EmployeeFragment(null);//If we make instance of this, null parameter will throw an error
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -99,8 +104,9 @@ public class EmployeeFragment extends Fragment implements TabHost.OnTabChangeLis
     private void initComponents() {
 
         tabhost= (TabHost) this.view.findViewById(R.id.employee_tabHost);
-        tab_category_view= (LinearLayout) this.view.findViewById(R.id.employee_view_linearLayout);
-        tab_category_insert= (LinearLayout) this.view.findViewById(R.id.employee_insert_linearLayout);
+        tab_employee_itemView= (LinearLayout) this.view.findViewById(R.id.employee_itemView_linearLayout);
+        tab_employee_listView= (LinearLayout) this.view.findViewById(R.id.employee_listView_linearLayout);
+        tab_employee_insertView= (LinearLayout) this.view.findViewById(R.id.employee_insertView_linearLayout);
 
         initListeners();
     }
@@ -117,16 +123,22 @@ public class EmployeeFragment extends Fragment implements TabHost.OnTabChangeLis
         res=getResources();
         tabhost.setup();
 
-        //View Tab
-        spec=tabhost.newTabSpec("CATEGORY_VIEW");
-        spec.setContent(R.id.employee_view_linearLayout);
-        spec.setIndicator("View", res.getDrawable(R.drawable.employee1_128x128));
+        //ItemView Tab
+        spec=tabhost.newTabSpec("@strings/employee_itemView_tabSpec_name");
+        spec.setContent(R.id.employee_itemView_linearLayout);
+        spec.setIndicator("@strings/employee_itemView_tabSpec_indicator", res.getDrawable(R.drawable.employee1_128x128));
         tabhost.addTab(spec);
 
-        //Insert Tab
-        spec=tabhost.newTabSpec("CATEGORY_INSERT");
-        spec.setContent(R.id.employee_insert_linearLayout);
-        spec.setIndicator("Insert", res.getDrawable(R.drawable.add1_128x128));
+        //ListView Tab
+        spec=tabhost.newTabSpec("@strings/employee_listView_tabSpec_name");
+        spec.setContent(R.id.employee_listView_linearLayout);
+        spec.setIndicator("@strings/employee_listView_tabSpec_indicator", res.getDrawable(R.drawable.employee1_128x128));
+        tabhost.addTab(spec);
+
+        //InsertView Tab
+        spec=tabhost.newTabSpec("@strings/employee_insertView_tabSpec_name");
+        spec.setContent(R.id.employee_insertView_linearLayout);
+        spec.setIndicator("@strings/employee_insertView_tabSpec_indicator", res.getDrawable(R.drawable.add1_128x128));
         tabhost.addTab(spec);
 
         for(int i=0;i<tabhost.getTabWidget().getChildCount();i++)
@@ -214,7 +226,8 @@ public class EmployeeFragment extends Fragment implements TabHost.OnTabChangeLis
                         if (diffX > 0) {
                             //Left Animation
                             if(tabhost.getCurrentTab()==0){
-                                tabhost.setCurrentTab(1);
+//                                tabhost.setCurrentTab(1);
+                                drawerLayout.openDrawer(Gravity.LEFT);
                             }else{
                                 tabhost.setCurrentTab(tabhost.getCurrentTab()-1);
                             }

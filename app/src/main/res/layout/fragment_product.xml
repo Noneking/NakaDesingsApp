@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/product_mainLayout"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+    tools:context="com.example.nonek.nakadesingsapp.CategoryActivity">
 
     <RelativeLayout
         android:id="@+id/product_content"
@@ -45,7 +36,7 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/product_view_linearLayout"
+                        android:id="@+id/product_itemView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -53,12 +44,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="VIEW_PRODUCT"/>
+                            android:text="ITEM_VIEW_PRODUCT"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/product_insert_linearLayout"
+                        android:id="@+id/product_listView_linearLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
@@ -66,7 +57,20 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="INSERT_PRODUCT"/>
+                            android:text="LISTVIEW_PRODUCT"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/product_insertView_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="INSERT_VIEW_PRODUCT"/>
 
                     </LinearLayout>
                 </FrameLayout>

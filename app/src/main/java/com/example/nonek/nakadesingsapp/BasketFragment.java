@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,16 +17,17 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link CategoryActivity.OnFragmentInteractionListener} interface
+ * {@link BasketFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link CategoryActivity#newInstance} factory method to
+ * Use the {@link BasketFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 
-public class CategoryActivity extends Fragment implements TabHost.OnTabChangeListener, TabHost.OnTouchListener {
+public class BasketFragment extends Fragment implements TabHost.OnTabChangeListener, TabHost.OnTouchListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -49,11 +49,11 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
 
     private TabHost tabhost;
     private TabHost.TabSpec spec;
-    private LinearLayout tab_category_listView, tab_category_insertView, tab_category_itemView;
+    private LinearLayout tab_basket_itemView, tab_basket_listView, tab_basket_insertView;
 
     private int currentTab;
 
-    public CategoryActivity(DrawerLayout drawerLayout) {
+    public BasketFragment(DrawerLayout drawerLayout) {
         // Required empty public constructor
         this.drawerLayout=drawerLayout;
     }
@@ -64,12 +64,12 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoryActivity.
+     * @return A new instance of fragment BasketFragment.
      */
 
     // TODO: Rename and change types and number of parameters
-    public static CategoryActivity newInstance(String param1, String param2) {
-        CategoryActivity fragment = new CategoryActivity(null);//If we make instance of this, null parameter will throw an error
+    public static BasketFragment newInstance(String param1, String param2) {
+        BasketFragment fragment = new BasketFragment(null);//If we make instance of this, null parameter will throw an error
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -89,7 +89,7 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        this.view=inflater.inflate(R.layout.fragment_category, container, false);
+        this.view=inflater.inflate(R.layout.fragment_basket, container, false);
         initFragmentUtilities();
 
         return this.view;
@@ -102,10 +102,10 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
 
     private void initComponents() {
 
-        tabhost= (TabHost) this.view.findViewById(R.id.category_tabHost);
-        tab_category_itemView= (LinearLayout) this.view.findViewById(R.id.category_itemView_linearLayout);
-        tab_category_listView= (LinearLayout) this.view.findViewById(R.id.category_listView_linearLayout);
-        tab_category_insertView= (LinearLayout) this.view.findViewById(R.id.category_insertView_linearLayout);
+        tabhost= (TabHost) this.view.findViewById(R.id.basket_tabHost);
+        tab_basket_itemView= (LinearLayout) this.view.findViewById(R.id.basket_itemView_linearLayout);
+        tab_basket_listView= (LinearLayout) this.view.findViewById(R.id.basket_listView_linearLayout);
+        tab_basket_insertView= (LinearLayout) this.view.findViewById(R.id.basket_insertView_linearLayout);
 
         initListeners();
     }
@@ -123,21 +123,21 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
         tabhost.setup();
 
         //ItemView Tab
-        spec=tabhost.newTabSpec("@strings/category_itemView_tabSpec_name");
-        spec.setContent(R.id.category_itemView_linearLayout);
-        spec.setIndicator("@strings/category_itemView_tabSpec_indicator", res.getDrawable(R.drawable.category_128x128));
+        spec=tabhost.newTabSpec("@strings/basket_itemView_tabSpec_name");
+        spec.setContent(R.id.basket_itemView_linearLayout);
+        spec.setIndicator("@strings/basket_itemView_tabSpec_indicator", res.getDrawable(R.drawable.shopping_cart_128x128));
         tabhost.addTab(spec);
 
         //ListView Tab
-        spec=tabhost.newTabSpec("@strings/category_listView_tabSpec_name");
-        spec.setContent(R.id.category_listView_linearLayout);
-        spec.setIndicator("@strings/category_listView_tabSpec_indicator", res.getDrawable(R.drawable.category_128x128));
+        spec=tabhost.newTabSpec("@strings/basket_listView_tabSpec_name");
+        spec.setContent(R.id.basket_listView_linearLayout);
+        spec.setIndicator("@strings/basket_listView_tabSpec_indicator", res.getDrawable(R.drawable.shopping_cart_128x128));
         tabhost.addTab(spec);
 
         //InsertView Tab
-        spec=tabhost.newTabSpec("@strings/category_insertView_tabSpec_name");
-        spec.setContent(R.id.category_insertView_linearLayout);
-        spec.setIndicator("@strings/category_insertView_tabSpec_indicator", res.getDrawable(R.drawable.add1_128x128));
+        spec=tabhost.newTabSpec("@strings/basket_insertView_tabSpec_name");
+        spec.setContent(R.id.basket_insertView_linearLayout);
+        spec.setIndicator("@strings/basket_insertView_tabSpec_indicator", res.getDrawable(R.drawable.add1_128x128));
         tabhost.addTab(spec);
 
         for(int i=0;i<tabhost.getTabWidget().getChildCount();i++)
@@ -146,7 +146,7 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
             widgetTextView.setTextColor(Color.parseColor("#FFFFFF"));
         }
 
-        tabhost.setCurrentTab(1);
+        tabhost.setCurrentTab(0);
         currentTab=0;
 
     }
@@ -226,14 +226,14 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
                         if (diffX > 0) {
                             //Left Animation
                             if(tabhost.getCurrentTab()==0){
-//                                tabhost.setCurrentTab(2);
+//                                tabhost.setCurrentTab(1);
                                 drawerLayout.openDrawer(Gravity.LEFT);
                             }else{
                                 tabhost.setCurrentTab(tabhost.getCurrentTab()-1);
                             }
                         } else {
                             //Right Animation
-                            if(tabhost.getCurrentTab()==2){
+                            if(tabhost.getCurrentTab()>1){
                                 tabhost.setCurrentTab(0);
                             }else{
                                 tabhost.setCurrentTab(tabhost.getCurrentTab()+1);
@@ -259,5 +259,4 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
             return result;
         }
     });
-
 }

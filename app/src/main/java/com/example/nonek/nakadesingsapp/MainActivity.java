@@ -1,5 +1,6 @@
 package com.example.nonek.nakadesingsapp;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,15 +18,18 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CategoryActivity.OnFragmentInteractionListener, EmployeeFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CategoryActivity.OnFragmentInteractionListener, ProductFragment.OnFragmentInteractionListener, EmployeeFragment.OnFragmentInteractionListener, BasketFragment.OnFragmentInteractionListener {
 
     //Components
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
-    ProductActivity productActivity;
-    CategoryActivity categoryFragment;
-    EmployeeFragment employeeFragment;
+    private Intent intent;
+
+    private ProductFragment productFragment;
+    private CategoryActivity categoryFragment;
+    private EmployeeFragment employeeFragment;
+    private BasketFragment basketFragment;
 
     //Variables
     private String drawerTitle;
@@ -126,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch(title){
             case "Category":
 
-                categoryFragment=new CategoryActivity();
+                categoryFragment=new CategoryActivity(drawerLayout);
 
                 fragmentManager=getSupportFragmentManager();
                 fragmentTransaction=fragmentManager.beginTransaction();
@@ -134,15 +138,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case "Product":
 
-                productActivity=new ProductActivity();
+                productFragment=new ProductFragment(drawerLayout);
 
                 fragmentManager=getSupportFragmentManager();
                 fragmentTransaction=fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.main_content, productActivity).commit();
+                fragmentTransaction.replace(R.id.main_content, productFragment).commit();
                 break;
             case "Employee":
 
-                employeeFragment=new EmployeeFragment();
+                employeeFragment=new EmployeeFragment(drawerLayout);
 
                 fragmentManager=getSupportFragmentManager();
                 fragmentTransaction=fragmentManager.beginTransaction();
@@ -150,9 +154,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case "Basket":
 
+                basketFragment=new BasketFragment(drawerLayout);
+
+                fragmentManager=getSupportFragmentManager();
+                fragmentTransaction=fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.main_content, basketFragment).commit();
                 break;
             case "Log out":
 
+                intent=new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
                 break;
         }
 
