@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_view_main_layout">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:src="@drawable/category_128x128" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/imageViewItem"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="75dp"-->
+        <!--android:layout_height="75dp"-->
+        <!--android:src="@drawable/category_128x128" />-->
+
+    <LinearLayout
+        android:id="@+id/main_view_second_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="@+id/main_view_main_layout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_textViewTitle"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="@string/listView_item_title" />
+
+        <TextView
+            android:id="@+id/item_textViewSubTitle"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="@string/listView_item_subtitle" />
+
+    </LinearLayout>
+
+</LinearLayout>

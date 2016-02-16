@@ -5,7 +5,10 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -112,14 +115,15 @@ public class CategoryActivity extends Fragment implements TabHost.OnTabChangeLis
 
     private void initListeners() {
 
-        tabhost.setOnTouchListener(this);
+//        tabhost.setOnTouchListener(this);
 
         initOperations();
     }
 
     private void initOperations() {
 
-        res=getResources();
+
+        res = getResources();
         tabhost.setup();
 
         //ItemView Tab

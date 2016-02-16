@@ -37,48 +37,53 @@
 
     //MAIN ACTIVITY
 
-    //CATEGORY
-    <string name="category_itemView_tabSpec_name">CATEGORY_ITEM_VIEW</string>
-    <string name="category_itemView_tabSpec_indicator">ItemView</string>
+        //CATEGORY
+        <string name="category_itemView_tabSpec_name">CATEGORY_ITEM_VIEW</string>
+        <string name="category_itemView_tabSpec_indicator">ItemView</string>
 
-    <string name="category_listView_tabSpec_name">CATEGORY_LIST_VIEW</string>
-    <string name="category_listView_tabSpec_indicator">ListView</string>
+        <string name="category_listView_tabSpec_name">CATEGORY_LIST_VIEW</string>
+        <string name="category_listView_tabSpec_indicator">ListView</string>
 
-    <string name="category_insertView_tabSpec_name">CATEGORY_INSERT_VIEW</string>
-    <string name="category_insertView_tabSpec_indicator">InsertView</string>
+        <string name="category_insertView_tabSpec_name">CATEGORY_INSERT_VIEW</string>
+        <string name="category_insertView_tabSpec_indicator">InsertView</string>
 
-    //PRODUCT
-    <string name="product_itemView_tabSpec_name">PRODUCT_ITEM_VIEW</string>
-    <string name="product_itemView_tabSpec_indicator">ItemView</string>
+        //PRODUCT
+        <string name="product_itemView_tabSpec_name">PRODUCT_ITEM_VIEW</string>
+        <string name="product_itemView_tabSpec_indicator">ItemView</string>
 
-    <string name="product_listView_tabSpec_name">PRODUCT_LIST_VIEW</string>
-    <string name="product_listView_tabSpec_indicator">ListView</string>
+        <string name="product_listView_tabSpec_name">PRODUCT_LIST_VIEW</string>
+        <string name="product_listView_tabSpec_indicator">ListView</string>
 
-    <string name="product_insertView_tabSpec_name">PRODUCT_INSERT_VIEW</string>
-    <string name="product_insertView_tabSpec_indicator">InsertView</string>
+        <string name="product_insertView_tabSpec_name">PRODUCT_INSERT_VIEW</string>
+        <string name="product_insertView_tabSpec_indicator">InsertView</string>
 
-    //EMPLOYEE
-    <string name="employee_itemView_tabSpec_name">EMPLOYEE_ITEM_VIEW</string>
-    <string name="employee_itemView_tabSpec_indicator">ItemView</string>
+        //EMPLOYEE
+        <string name="employee_itemView_tabSpec_name">EMPLOYEE_ITEM_VIEW</string>
+        <string name="employee_itemView_tabSpec_indicator">ItemView</string>
 
-    <string name="employee_listView_tabSpec_name">EMPLOYEE_LIST_VIEW</string>
-    <string name="employee_listView_tabSpec_indicator">ListView</string>
+        <string name="employee_listView_tabSpec_name">EMPLOYEE_LIST_VIEW</string>
+        <string name="employee_listView_tabSpec_indicator">ListView</string>
 
-    <string name="employee_insertView_tabSpec_name">EMPLOYEE_INSERT_VIEW</string>
-    <string name="employee_insertView_tabSpec_indicator">InsertView</string>
+        <string name="employee_insertView_tabSpec_name">EMPLOYEE_INSERT_VIEW</string>
+        <string name="employee_insertView_tabSpec_indicator">InsertView</string>
 
-    //BASKET
-    <string name="basket_itemView_tabSpec_name">BASKET_ITEM_VIEW</string>
-    <string name="basket_itemView_tabSpec_indicator">ItemView</string>
+        //BASKET
+        <string name="basket_itemView_tabSpec_name">BASKET_ITEM_VIEW</string>
+        <string name="basket_itemView_tabSpec_indicator">ItemView</string>
 
-    <string name="basket_listView_tabSpec_name">BASKET_LIST_VIEW</string>
-    <string name="basket_listView_tabSpec_indicator">ListView</string>
+        <string name="basket_listView_tabSpec_name">BASKET_LIST_VIEW</string>
+        <string name="basket_listView_tabSpec_indicator">ListView</string>
 
-    <string name="basket_insertView_tabSpec_name">BASKET_INSERT_VIEW</string>
-    <string name="basket_insertView_tabSpec_indicator">InsertView</string>
+        <string name="basket_insertView_tabSpec_name">BASKET_INSERT_VIEW</string>
+        <string name="basket_insertView_tabSpec_indicator">InsertView</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+        <!-- TODO: Remove or change this placeholder text -->
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+
+        //LISTVIEW
+        <string name="listView_item_title"></string>
+        <string name="listView_item_subtitle"></string>
+
 
 
 </resources>
